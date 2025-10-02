@@ -7,8 +7,8 @@ export default defineConfig({
   name: 'default',
   title: 'ohmybali',
 
-  projectId: process.env.SANITY_STUDIO_PROJECT_ID || '4t9zyk9f',
-  dataset: process.env.SANITY_STUDIO_DATASET || 'production',
+  projectId: "4t9zyk9f",
+  dataset: "production",
 
   plugins: [structureTool(), visionTool()],
 
