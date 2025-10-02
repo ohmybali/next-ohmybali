@@ -1,6 +1,4 @@
 import Image from "next/image";
-import img1 from '@/assets/imgs/img1.webp';
-import imgMission from '@/assets/imgs/mission.webp';
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "next-sanity";
 

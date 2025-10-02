@@ -1,7 +1,6 @@
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
-import './ohmy.css';
 
 type ChildProps = {
   id:string, 

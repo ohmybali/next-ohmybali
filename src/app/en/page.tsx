@@ -10,19 +10,19 @@ import Header from "@/components/Header";
 import Left from "@/components/Left";
 import Right from "@/components/Right";
 
-const POSTS_QUERY = `*[ _type == "directions" ]{_id, title_en, image, content_en} | order(_createdAt desc)`;
+const POSTS_QUERY = `*[ _type == "directions" ]{_id, title_en, image, content_en, order} | order(order asc)`;
 const MAIN_QUERY = `*[_type == "mainType" ]{_id, title_en, image, content_en} | order(_createdAt desc)`;
-const CONTACTS_QUERY = `*[_type == "contactsType" ]{_id, content_en} | order(_createdAt desc)`;
+const CONTACTS_QUERY = `*[_type == "contactsType" ]{_id, content_en, order} | order(order asc)`;
 
 export default async function Home() {
   let odd: boolean = false;
   const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY);
   const main = await client.fetch<SanityDocument[]>(MAIN_QUERY);
   const contacts = await client.fetch<SanityDocument[]>(CONTACTS_QUERY);
-  const main_hero = main[0];
-  const aboutUs = main[3];
-  const mission = main[2];
-  const whyus = main[1];
+  const main_hero = main[1];
+  const aboutUs = main[0];
+  const mission = main[3];
+  const whyus = main[2];
 
   return (
     <main>
